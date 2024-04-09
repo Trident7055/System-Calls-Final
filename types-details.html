@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types Of System Calls</title>
+    <style>
+        /* Style for video container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Place the video behind other content */
+        }
+
+        /* Style for video element */
+        #video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Style for text content */
+        h1, ul {
+            position: relative;
+            z-index: 1; /* Ensure text appears on top of video */
+            color: #fff; /* Set text color to white */
+            text-align: center; /* Center align text */
+        }
+
+        .header-box {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto; /* Center the box */
+            max-width: 300px; /* Limit the width of the box */
+            display: flex; /* Add this line */
+            justify-content: center; /* Add this line */
+        }
+
+        /* Style for header text */
+        h1 {
+            margin: 0; /* Remove the default margin */
+        }
+
+        /* Style for list items */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0; /* Add margin to create space between links and boxes */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        /* Style for list links */
+        ul li a {
+            color: #fff; /* Set link color to white */
+            font-size: 22px;
+            text-decoration: none; /* Remove underline from links */
+            display: block; /* Make the link fill the li */
+            padding: 10px; /* Add padding for better spacing */
+            margin: 5px; /* Add margin between links */
+        }
+
+        /* Style for additional information sections */
+        .section-container {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Align items vertically in the middle */
+            margin-top: 20px; /* Add margin to separate boxes from links */
+            display: none; /* Initially hide the section boxes */
+        }
+
+        .section-box {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 0 10px; /* Add margin to separate boxes */
+            flex: 1; /* Distribute boxes equally */
+            max-width: 300px; /* Limit the width of the box */
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .options-list li {
+            font-size: 20px; /* Increase font size */
+            padding: 12px 20px; /* Increase padding */
+            margin-bottom: 15px; /* Increase margin */
+            /* You can also adjust width and height if needed */
+        }
+
+        .options-list li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Set text color inside the section boxes to white */
+        .section-box h2 {
+            color: #fff;
+        }
+
+        /* Style for Process Control section */
+        .section-box:nth-of-type(2) {
+            background-color: rgba(255, 165, 0, 0.2);
+        }
+
+        .section-box:nth-of-type(2) h2 {
+            color: #FFA500;
+        }
+
+        /* Style for Memory Management section */
+        .section-box:nth-of-type(3) {
+            background-color: rgba(0, 128, 128, 0.2);
+        }
+
+        .section-box:nth-of-type(3) h2 {
+            color: #008080;
+        }
+
+        /* Style for Interprocess Communication section */
+        .section-box:nth-of-type(4) {
+            background-color: rgba(100, 149, 237, 0.2);
+        }
+
+        .section-box:nth-of-type(4) h2 {
+            color: #6495ED;
+        }
+
+        /* Style for Device Management section */
+        .section-box:nth-of-type(5) {
+            background-color: rgba(210, 105, 30, 0.2);
+        }
+
+        .section-box:nth-of-type(5) h2 {
+            color: #D2691E;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video background -->
+    <div class="video-container">
+        <video autoplay muted loop id="video-bg">
+            <source src="Videos/video.mp4" type="video/mp4">
+            <!-- Add additional video formats if needed -->
+        </video>
+    </div>
+    <!-- Header Box -->
+    <div class="header-box">
+        <h1>System Calls Types</h1>
+    </div>
+    <ul>
+        <li><a href="#file-management"> File Management</a></li>
+        <li><a href="#process-control"> Process Control</a></li>
+        <li><a href="#memory-management"> Memory Management</a></li>
+    </ul>
+    <ul>
+        <li><a href="#interprocess-communication"> Interprocess Communication</a></li>
+        <li><a href="#device-management"> Device Management</a></li>
+    </ul>
+
+    <!-- File Management Sections -->
+    <div class="section-container" id="file-management">
+        <div class="section-box">
+            <h2>File Management</h2>
+            <ul class="options-list"></ul>
+        </div>
+    </div>
+    <!-- Process Control Sections -->
+    <div class="section-container" id="process-control">
+        <div class="section-box">
+            <h2>Process Control</h2>
+            <ul class="options-list"></ul>
+        </div>
+    </div>
+    <!-- Memory Management Sections -->
+    <div class="section-container" id="memory-management">
+        <div class="section-box">
+            <h2>Memory Management</h2>
+            <ul class="options-list"></ul>
+        </div>
+    </div>
+    <!-- Interprocess Communication Sections -->
+    <div class="section-container" id="interprocess-communication">
+        <div class="section-box">
+            <h2>Interprocess Communication</h2>
+            <ul class="options-list"></ul>
+        </div>
+    </div>
+    <!-- Device Management Sections -->
+    <div class="section-container" id="device-management">
+        <div class="section-box">
+            <h2>Device Management</h2>
+            <ul class="options-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        const sections = ['file-management', 'process-control', 'memory-management', 'interprocess-communication', 'device-management'];
+        const links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('href').slice(1);
+                const targetSection = document.getElementById(sectionId);
+                const options = generateOptions(sectionId);
+                const allSections = document.querySelectorAll('.section-container');
+                allSections.forEach(section => {
+                    section.style.display = 'none';
+                });
+                targetSection.querySelector('.options-list').innerHTML = ''; // Clear previous content
+                targetSection.querySelector('.options-list').appendChild(options);
+                targetSection.style.display = 'flex'; // Show the section box
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'end' }); // Scroll to the bottom of the section
+                }, 100);
+            });
+        });
+
+        function generateOptions(sectionId) {
+            let options;
+            switch (sectionId) {
+                case 'file-management':
+                    options = [
+                        { text: 'Open', link: 'file_open.html' },
+                        { text: 'Read()', link: 'file_read.html' },
+                        { text: 'Write()', link: 'file_write.html' },
+                        { text: 'Close()', link: 'file_close.html' },
+                    ];
+                    break;
+                case 'process-control':
+                    options = [
+                        { text: 'fork()', link: 'fork.html' },
+                        { text: 'exec()', link: 'exec.html' },
+                        { text: 'exit()', link: 'exit.html' },
+                        { text: 'wait()', link: 'wait.html' },
+                    ];
+                    break;
+                case 'memory-management':
+                    options = [
+                        { text: 'sbrk()', link: 'sbrk.html' },
+                        { text: 'munmap()', link: 'munmap.html' },
+                        { text: 'free', link: 'free.html' },
+                    ];
+                    break;
+                case 'interprocess-communication':
+                    options = [
+                        { text: 'Pipe()', link: 'pipe.html' },
+                        { text: 'msgget()', link: 'msgget.html' },
+                        { text: 'shmget()', link: 'shmget.html' },
+                        { text: 'semget', link: 'semget.html' },
+                    ];
+                    break;
+                case 'device-management':
+                    options = [
+                        { text: 'Open Device', link: 'open_device.html' },
+                        { text: 'Close Device', link: 'close_device.html' },
+                        { text: 'Read Device', link: 'read_device.html' },
+                        { text: 'Write Device', link: 'write_device.html' },
+                    ];
+                    break;
+                default:
+                    options = [];
+                    break;
+            }
+            const list = document.createElement('ul');
+
+            options.forEach((option, index) => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = option.link;
+                link.textContent = option.text;
+                listItem.appendChild(link);
+                list.appendChild(listItem);
+            });
+
+            return list;
+        }
+    </script>
+</body>
+</html>

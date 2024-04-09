@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .file-management {
+            font-size: 50px;
+        }
+        .open {
+            font-size: 30px;
+            text-align: left;
+            margin-left: 50px;
+        }
+        .function-info {
+            text-align: left;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="file-management">FILE MANAGEMENT</h1>
+        <p class="open">Read()</p>
+        <p class="function-info">
+            read(): As a core component of input operations, the read() system call facilitates the extraction of data from an open file into memory buffers. It requires parameters like the file descriptor, a buffer to store the read data, and the number of bytes to read. Efficient memory management is critical to prevent buffer overflows or memory leaks. Additionally, error handling is essential to handle cases where the read operation fails, such as reaching the end of the file or encountering a file system error.
+
+        </p>
+        <button onclick="createFile()">Create file</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script>
+        function createFile() {
+            var element = document.querySelector('.container');
+            html2pdf()
+                .from(element)
+                .save('example.pdf');
+        }
+    </script>
+</body>
+</html>

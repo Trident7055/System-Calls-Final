@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fork() System Call Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .output {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Execution of Fork()</h2>
+        <button onclick="executeFork()">Execute fork()</button>
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function executeFork() {
+            var outputElement = document.getElementById('output');
+            outputElement.innerText = ''; // Clear previous output
+
+            var childPID = Math.floor(Math.random() * 1000); // Simulate child PID
+            var parentPID = Math.floor(Math.random() * 1000); // Simulate parent PID
+
+            // Simulate fork() behavior
+            outputElement.innerText += 'Parent process created with PID: ' + parentPID + '\n';
+            outputElement.innerText += 'Child process created with PID: ' + childPID + '\n';
+            outputElement.innerText += 'Child process continues execution from fork() call.\n';
+            outputElement.innerText += 'Child process received ID: 0\n';
+            outputElement.innerText += 'Parent process receives child process ID: ' + childPID + '\n';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wait System Call Simulation</title>
+</head>
+<body>
+    <h1>Wait System Call Simulation</h1>
+    <div id="output"></div>
+    <script>
+        // Simulate the behavior of wait() system call
+        function simulateWait() {
+            // Display starting message
+            displayOutput("Parent process: Simulating wait() system call...");
+
+            // Simulate child process termination
+            setTimeout(() => {
+                // Display termination message
+                displayOutput("Child process: Terminated.");
+
+                // Simulate retrieving exit status
+                setTimeout(() => {
+                    // Display exit status message
+                    displayOutput("Parent process: Received exit status 0 from child process.");
+                }, 1000);
+            }, 3000);
+        }
+
+        // Function to display output
+        function displayOutput(message) {
+            const outputDiv = document.getElementById("output");
+            outputDiv.innerHTML += `<p>${message}</p>`;
+        }
+    </script>
+
+    <!-- Button to start the simulation -->
+    <button onclick="simulateWait()">Simulate wait()</button>
+</body>
+</html>

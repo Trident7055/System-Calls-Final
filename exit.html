@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Simulation</title>
+</head>
+<body>
+    <h1>Process Simulation</h1>
+    <div id="output"></div>
+    <script>
+        // Simulate forking a child process
+        function forkChildProcess() {
+            // Display starting message
+            displayOutput("Forking child process...");
+
+            // Simulate some processing in the child process
+            setTimeout(() => {
+                // Send message to parent process
+                displayOutput("Child process: Hello from the child!");
+
+                // Simulate further processing in the child process
+                setTimeout(() => {
+                    // Display completion message
+                    displayOutput("Child process: Done processing.");
+
+                    // Simulate closing the child process
+                    setTimeout(() => {
+                        displayOutput("Child process: Closing...");
+                        // Simulate exiting the child process
+                        displayOutput("Child process: Closed.");
+                    }, 1000);
+                }, 2000);
+            }, 2000);
+        }
+
+        // Function to display output
+        function displayOutput(message) {
+            const outputDiv = document.getElementById("output");
+            outputDiv.innerHTML += `<p>${message}</p>`;
+        }
+    </script>
+
+    <!-- Button to start the simulation -->
+    <button onclick="forkChildProcess()">Start Process Simulation</button>
+</body>
+</html>

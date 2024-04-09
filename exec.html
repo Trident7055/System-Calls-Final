@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exec() System Call Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .output {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>exec() System Call Demo</h2>
+        <button onclick="executeExec()">Execute exec()</button>
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function executeExec() {
+            var outputElement = document.getElementById('output');
+            outputElement.innerText = ''; // Clear previous output
+
+            // Simulate fork() call to create a child process
+            var childPID = Math.floor(Math.random() * 1000); // Simulate child PID
+
+            // Check if this is the child process
+            if (childPID === 0) {
+                // Simulate different variants of exec()
+                // Here, we are assuming execl() variant for demonstration purpose
+                outputElement.innerText += 'Child process created with PID: ' + childPID + '\n';
+                outputElement.innerText += 'Child process executing a different program using execl()\n';
+
+                // Simulate loading and executing a different program
+                // Replace this with actual logic to execute a different program
+                var newProgramPath = '/path/to/new/program';
+                var arg1 = 'arg1';
+                var arg2 = 'arg2';
+                execl(newProgramPath, arg1, arg2, null);
+            } else {
+                // This is the parent process
+                outputElement.innerText += 'Parent process created with PID: ' + childPID + '\n';
+                outputElement.innerText += 'Parent process waiting for child process to complete...\n';
+            }
+        }
+
+        // Simulated version of execl() for demonstration purpose
+        function execl(programPath, arg1, arg2, terminator) {
+            // Here, we simulate loading and executing the new program
+            console.log('Executing program:', programPath);
+            console.log('Arguments:', arg1, arg2);
+
+            // In a real environment, you would use appropriate system calls to execute a new program
+            // The below code is just a placeholder to demonstrate the concept
+            // Replace it with actual logic to execute a different program
+            // For example, you might use Node.js child_process module or AJAX requests to interact with server-side scripts
+
+            // After executing the new program, terminate the current process
+            if (terminator !== null) {
+                console.log('Terminating current process...');
+                exit(0);
+            }
+        }
+
+        // Simulated version of exit() for demonstration purpose
+        function exit(status) {
+            // Here, we simulate the exit of the current process
+            console.log('Exiting process with status:', status);
+
+            // In a real environment, you would use appropriate system calls to exit the process
+            // The below code is just a placeholder to demonstrate the concept
+            // Replace it with actual logic to exit the process
+        }
+    </script>
+</body>
+</html>

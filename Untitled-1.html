@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Calls Browser</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for video container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Place the video behind other content */
+        }
+
+        /* Style the video element */
+        #video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Remove scroll bars */
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            z-index: 1; /* Ensure header stays on top */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding-top: 100px; /* Adjust top padding to make space for the fixed header */
+            text-align: center;
+            color: #fff; /* Keep text color white */
+        }
+
+        main .center {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        main h1 {
+            font-size: 36px;
+        }
+
+        main p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video background -->
+    <div class="video-container">
+        <video autoplay muted loop id="video-bg">
+            <source src="Videos/video.mp4" type="video/mp4">
+            <!-- Add additional video formats if needed -->
+        </video>
+    </div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="types-details.html">TYPES</a></li> <!-- Updated -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="center">
+            <h1>SYSTEM CALLS</h1>
+            <p>System calls are the interface between user-level processes and the operating system. They provide a way for applications to request services from the operating system, such as creating or manipulating files, managing processes, and controlling hardware devices.</p>
+        </div>
+    </main>
+</body>
+</html>
